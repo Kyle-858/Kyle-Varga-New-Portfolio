@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle Varga</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a6ba03843a.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "01qY6jcPjQjqwqYKm",
+      });
+   })();
+</script>
+</head>
+<body>
+    <section id="landing">
+        <nav>
+            <figure>
+                <img id="personal__logo" src="./assets/logo-removebg-preview.png" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link click">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect-black">About</a>
+                </li>
+                <li class="nav__link click">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect-black">Projects</a>
+                </li>
+                <li class="nav__link click">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect-black" onclick="toggleModal()">Contact</a>
+                </li>
+                <li class="nav__link" onclick="toggleContrast()">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                </li>
+                
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Hi</h1>
+                <h1 class="title green">I'm Kyle</h1>
+                <p class="header__para">I'm a <span class="green">freelance software developer</span> passionate about problem solving and bringing creative ideas to life! 
+                    <span class="lighter__opacity"><br>Click here to learn more </span><b class="green click" onclick="toggleModal()">about me</b>
+                </p>
+                <div class="social__links">
+                    <a href="https://www.linkedin.com/in/kyle-varga-209950300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="blank" class="click social__link"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <a href="https://github.com/Kyle-858/Kyle-Repository.git" target="blank" class="click social__link"><i class="fa-brands fa-github"></i></a></li>
+                    <a href="./assets/Kyle Varga Resume Updated.pdf" target="blank" class="click social__link"><i class="fa-solid fa-file"></i></a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="arrow__wrapper">
+            <i class="arrow__bump fa-solid fa-angle-down"></i>
+        </div>
+        <button class="email__btn" onclick="toggleModal()">
+            <i class="fa-solid fa-envelope"></i>
+        </button>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title">Here's more about me</h3>
+                <h4 class="modal__subtitle modal__subtitle--about">Frontend Developer</h4>
+                <p class="modal__para">I'm a 21 year old software engineer from Pennsylavania. </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img src="./assets/html5-logo-javascript-3-removebg-preview (1).png" alt="" class="modal__language--img">
+                        <span class="modal__language--caption">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/198-1985012_transparent-css3-logo-png-css-logo-transparent-background-removebg-preview.png" alt="" class="modal__language--img">
+                        <span class="modal__language--caption">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/OIP__3_-removebg-preview.png" alt="" class="modal__language--img">
+                        <span class="modal__language--caption">React</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/JavaScript-Emblem-500x281.png" alt="" class="modal__language--img">
+                        <span class="modal__language--caption language__caption--js">JavaScript</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <h3 class="modal__title modal__title--contact">Looking forward to hearing from you!</h3>
+                <h4 class="modal__subtitle modal__subtitle--contact">I'm currently open to new opportunities</h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button class="form__submit">Send</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">Thanks for the message, looking forward to speaking with you!</div>
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+            </div>
+        </div>
+    </section>
+    <section class="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">Here are a few of my <span class="green">projects</span></h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/Screenshot_18-7-2025_18637_127.0.0.1.jpeg" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">Band Website</h1>
+                                <h4 class="project__description--subtitle">HTML, JavaScript, CSS</h4>
+                                <p class="project__description--para">This was one of the first projects I created on my own. I created it for my band using HTML, JavaScript and CSS. </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/Screenshot_18-7-2025_18637_127.0.0.1.jpeg" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">Band Website</h1>
+                                <h4 class="project__description--subtitle">HTML, JavaScript, CSS</h4>
+                                <p class="project__description--para">This was one of the first projects I created on my own. I created it for my band using HTML, JavaScript and CSS. </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/Screenshot_18-7-2025_18637_127.0.0.1.jpeg" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">Band Website</h1>
+                                <h4 class="project__description--subtitle">HTML, JavaScript, CSS</h4>
+                                <p class="project__description--para">This was one of the first projects I created on my own. I created it for my band using HTML, JavaScript and CSS. </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <img src="assets/logo-removebg-preview.png" alt="" class="footer__logo--img">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="#" class="footer__social--link
+                    link__hover-effect
+                    link__hover-effect__white">
+                        GitHub
+                    </a>
+                    <a href="#" class="footer__social--link
+                    link__hover-effect
+                    link__hover-effect__white">
+                        LinkedIn
+                    </a>
+                    <a href="#" class="footer__social--link
+                    link__hover-effect
+                    link__hover-effect__white">
+                        Email
+                    </a>
+                    <a href="#" class="footer__social--link
+                    link__hover-effect
+                    link__hover-effect__white">
+                        Resume
+                    </a>
+                </div>
+                <div class="footer__copyright">Copyright © 2025 Kyle Varga</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
