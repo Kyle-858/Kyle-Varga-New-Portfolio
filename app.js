@@ -10,11 +10,17 @@ function moveBackground(event) {
     const shapes = document.querySelectorAll(".shape");
     const x = event.clientX * scaleFactor;
     const y = event.clientY * scaleFactor;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    const deltaX = event.clientX - centerX;
+    const deltaY = event.clientY - centerY;
+    const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 
     for (let i = 0; i < shapes.length; ++i) {
         const isOdd = i % 2 !== 0;
         const booleanInt = isOdd ? -1 : 1
-        shapes[i].style.transform = `translate(${x * booleanInt}px, ${y * booleanInt}px)`
+        shapes[i].style.transform = `translate(${x * booleanInt}px, ${y * booleanInt}px)
+        rotate(${angle * booleanInt}deg)`
     }
 }
 
